@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DailyDish</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header class = "container">
+      <nav>
+        <ul>
+          <li><%= image_tag "logo.svg", alt: "Daily Dish Logo", width: "50", height: "50" %></li>
+          <li><strong><%= I18n.t('navigation.headline') %></strong></li>
+        </ul>
+        <ul>
+          <li><%= link_to I18n.t('navigation.links.new_dish'), new_dish_path %></li>
+          <li><%= link_to I18n.t('navigation.links.all_dishes'), dishes_path %></li>
+          <li><%= link_to I18n.t('navigation.links.all_cooked_dishes'), cooked_dishes_path %></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <%= yield %>
+    </main>
+  </body>
+</html>

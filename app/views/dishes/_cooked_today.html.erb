@@ -1,0 +1,7 @@
+<%= form_with model: dish.cooked_dishes.build, scope: :cooked_dish do |form| %>
+  <%= form.hidden_field :dish_id %>
+  <%= form.hidden_field :cooked_at, value: Date.today %>
+  <div class= "cooked-today">
+    <%= form.submit I18n.t(:cooked_today) %>
+  </div>
+<% end %>

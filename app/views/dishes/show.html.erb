@@ -1,0 +1,16 @@
+<section>
+<h1><%= I18n.t('dishes.show.headline', name: @dish.name) %></h1>
+<p>
+  <%= markdown(@dish.hint) %>
+</p>
+<div class = "grid">
+  <div>
+    <%= link_to I18n.t('dishes.show.edit'), edit_dish_path(@dish), role: "button", class: "outline" %>
+    <%= link_to I18n.t('dishes.show.delete'), dish_path(@dish), data: {turbo_method: :delete, turbo_confirm: I18n.t('dishes.show.confirm_delete')}, role: "button", class: "outline" %>
+  </div>
+  <div>
+    <%= render "cooked_today", dish: @dish %>
+  </div>
+</div>
+
+</section>

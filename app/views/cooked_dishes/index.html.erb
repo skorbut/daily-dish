@@ -1,0 +1,18 @@
+<section>
+  <h1><%= I18n.t('cooked_dishes.index.random-headline') %></h1>
+  <p><mark><%= random_dish.name %></mark></p>
+</section>
+<section>
+  <h1><%= I18n.t('cooked_dishes.index.headline', month: @month) %></h1>
+  <ul>
+    <% @cooked_dishes.each do |cooked_dish| %>
+      <li>
+        <%= cooked_dish.cooked_at %>: <%= link_to cooked_dish.dish.name, dish_path(cooked_dish.dish) %>
+
+        <%= link_to cooked_dish_path(cooked_dish), data: {turbo_method: :delete, turbo_confirm: I18n.t('cooked_dishes.index.confirm_delete')} do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</section>

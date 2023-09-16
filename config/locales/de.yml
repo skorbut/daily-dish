@@ -1,0 +1,42 @@
+de:
+  activerecord:
+    models:
+      dish:
+        one: Gericht
+        other: Gerichte
+    attributes:
+      dish:
+        name: Name
+        hint: Hinweise
+  cooked_dishes:
+    index:
+      headline: Kochkalender %{month}
+      random-headline: Empfehlung des Hauses
+      delete: X
+      confirm_delete: 'wirklich löschen?'
+  dishes:
+    edit:
+      headline: Gericht bearbeiten
+    index:
+      headline: Gerichte
+      new: Neues Gericht
+      random-headline: Empfehlung des Hauses
+    new:
+      headline: Neues Gericht
+    show:
+      headline: "Details zu %{name}"
+      edit: Bearbeiten
+      delete: Löschen
+      confirm_delete: 'wirklich löschen?'
+  navigation:
+    headline: Das Tagesgericht
+    links:
+      new_dish: Neues Gericht
+      all_dishes: Alle Gerichte
+      all_cooked_dishes: Kochkalender
+  helpers:
+    submit:
+      create: "%{model} anlegen"
+      submit: "%{model} speichern"
+      update: "%{model} aktualisieren"
+  cooked_today: "Das gab's heute"

@@ -1,0 +1,14 @@
+<section>
+  <h1><%= I18n.t('dishes.index.random-headline') %></h1>
+  <p><mark><%= random_dish.name %></mark></p>
+</section>
+<section>
+  <h1><%= I18n.t('dishes.index.headline') %></h1>
+  <ul>
+    <% @dishes.each do |dish| %>
+      <li>
+        <%= link_to dish.name, dish_path(dish) %>
+      </li>
+    <% end %>
+  </ul>
+</section>

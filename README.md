@@ -1,30 +1,11 @@
 # README
 
 ## daily-dish
-A simple meal planner, collecting dish ideas and dates when a dish was actually cooked
+A simple meal planner, collecting dish ideas and dates when a dish was actually cooked.
+
 
 
 ## todo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* add user handling
+* deploy to fly.io

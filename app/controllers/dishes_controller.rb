@@ -16,6 +16,7 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
+    @dish.user = current_user
 
     if @dish.save
       redirect_to action: "index"
@@ -38,7 +39,7 @@ class DishesController < ApplicationController
   end
 
   def index
-    @dishes = Dish.all
+    @dishes = current_user.dishes
   end
 
   def set_dish

@@ -13,6 +13,7 @@ class CookedDishesController < ApplicationController
 
   def create
     @cooked_dish = CookedDish.new(cooked_dish_params)
+    @dish.user = current_user
     @cooked_dish.cooked_at = Time.zone.today if @cooked_dish.cooked_at.nil?
 
     if @cooked_dish.save
@@ -28,7 +29,7 @@ class CookedDishesController < ApplicationController
   end
 
   def index
-    @cooked_dishes = CookedDish.where(cooked_at: (Date.today.beginning_of_month..Date.today.end_of_month))
+    @cooked_dishes = current_user.cooked_dishes.where(cooked_at: (Date.today.beginning_of_month..Date.today.end_of_month))
     @month = I18n.l Time.zone.today, :format => "%B"
   end
 

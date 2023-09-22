@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :rememberable, :validatable, :registerable
 
   has_many :webauthn_credentials, dependent: :destroy
+  has_many :dishes
+  has_many :cooked_dishes
 
   validates :webauthn_id, uniqueness: true
 end

@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_21_103152) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_22_120335) do
   create_table "cooked_dishes", force: :cascade do |t|
     t.integer "dish_id", null: false
     t.date "cooked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["dish_id"], name: "index_cooked_dishes_on_dish_id"
+    t.index ["user_id"], name: "index_cooked_dishes_on_user_id"
   end
 
   create_table "dishes", force: :cascade do |t|
@@ -24,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_21_103152) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "hint"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_dishes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,5 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_21_103152) do
   end
 
   add_foreign_key "cooked_dishes", "dishes"
+  add_foreign_key "cooked_dishes", "users"
+  add_foreign_key "dishes", "users"
   add_foreign_key "webauthn_credentials", "users"
 end

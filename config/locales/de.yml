@@ -4,16 +4,31 @@ de:
       dish:
         one: Gericht
         other: Gerichte
+      user: Benutzer
     attributes:
       dish:
         name: Name
         hint: Hinweise
+      user:
+        email: Email
+        password: Passwort
+        password_confirmation: Passwort Bestätigung
   cooked_dishes:
     index:
       headline: Kochkalender %{month}
       random-headline: Empfehlung des Hauses
       delete: X
       confirm_delete: 'wirklich löschen?'
+  devise:
+    registrations:
+      new:
+        headline: Neuen Benutzer anlegen
+        hint_minimum_length: Mindestens %{minimum_length} Zeichen
+    sessions:
+      new:
+        headline: Benutzer anmelden
+        remember_me: Merken
+        submit: Anmelden
   dishes:
     edit:
       headline: Gericht bearbeiten
@@ -34,6 +49,9 @@ de:
       new_dish: Neues Gericht
       all_dishes: Alle Gerichte
       all_cooked_dishes: Kochkalender
+      login: Anmelden
+      logout: Abmelden
+      register: Registrieren
   helpers:
     submit:
       create: "%{model} anlegen"

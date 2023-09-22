@@ -1,5 +1,7 @@
 class CookedDishesController < ApplicationController
 
+
+  before_action :authenticate_user!
   before_action :set_cooked_dish, only: %i[show destroy]
 
   def new

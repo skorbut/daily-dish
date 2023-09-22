@@ -14,13 +14,23 @@
     <header class = "container">
       <nav>
         <ul>
-          <li><%= image_tag "logo.svg", alt: "Daily Dish Logo", width: "50", height: "50" %></li>
+          <li>
+            <%= link_to(root_path) do%>
+              <%= image_tag "logo.svg", alt: "Daily Dish Logo", width: "50", height: "50" %>
+            <% end %>
+          </li>
           <li><strong><%= I18n.t('navigation.headline') %></strong></li>
         </ul>
         <ul>
-          <li><%= link_to I18n.t('navigation.links.new_dish'), new_dish_path %></li>
-          <li><%= link_to I18n.t('navigation.links.all_dishes'), dishes_path %></li>
-          <li><%= link_to I18n.t('navigation.links.all_cooked_dishes'), cooked_dishes_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to I18n.t('navigation.links.new_dish'), new_dish_path %></li>
+            <li><%= link_to I18n.t('navigation.links.all_dishes'), dishes_path %></li>
+            <li><%= link_to I18n.t('navigation.links.all_cooked_dishes'), cooked_dishes_path %></li>
+            <li><%= link_to I18n.t('navigation.links.logout'), destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to I18n.t('navigation.links.register'), new_user_registration_path %></li>
+            <li><%= link_to I18n.t('navigation.links.login'), new_user_session_path %></li>
+          <% end %>
         </ul>
       </nav>
     </header>

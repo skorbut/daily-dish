@@ -7,5 +7,13 @@ class User < ApplicationRecord
   has_many :dishes
   has_many :cooked_dishes
 
-  validates :webauthn_id, uniqueness: true
+  validates :name, uniqueness: true
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 end

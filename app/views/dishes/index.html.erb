@@ -1,7 +1,9 @@
-<section>
-  <h1><%= I18n.t('dishes.index.random-headline') %></h1>
-  <p><mark><%= random_dish.name %></mark></p>
-</section>
+<% if random_dish.present? %>
+  <section>
+    <h1><%= I18n.t('dishes.index.random-headline') %></h1>
+    <p><mark><%= random_dish.name %></mark></p>
+  </section>
+<% end %>
 <section>
   <h1><%= I18n.t('dishes.index.headline') %></h1>
   <ul>

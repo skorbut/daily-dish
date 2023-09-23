@@ -1,13 +1,18 @@
 <section>
 <h1><%= I18n.t('dishes.show.headline', name: @dish.name) %></h1>
+<% if @dish.user != current_user %>
+<p><%= I18n.t('dishes.show.attribution', name: @dish.user.name) %></p>
+<% end %>
 <p>
   <%= markdown(@dish.hint) %>
 </p>
 <div class = "grid">
+  <% if @dish.user == current_user %>
   <div>
     <%= link_to I18n.t('dishes.show.edit'), edit_dish_path(@dish), role: "button", class: "outline" %>
     <%= link_to I18n.t('dishes.show.delete'), dish_path(@dish), data: {turbo_method: :delete, turbo_confirm: I18n.t('dishes.show.confirm_delete')}, role: "button", class: "outline" %>
   </div>
+  <% end %>
   <div>
     <%= render "cooked_today", dish: @dish %>
   </div>

@@ -39,6 +39,7 @@ de:
     new:
       headline: Neues Gericht
     show:
+      attribution: "von %{name}"
       headline: "Details zu %{name}"
       edit: Bearbeiten
       delete: Löschen
@@ -51,6 +52,7 @@ de:
       all_cooked_dishes: Kochkalender
       login: Anmelden
       logout: Abmelden
+      my_dishes: Meine Gerichte
       register: Registrieren
   helpers:
     submit:

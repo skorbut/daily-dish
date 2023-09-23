@@ -39,7 +39,11 @@ class DishesController < ApplicationController
   end
 
   def index
-    @dishes = current_user.dishes
+    if (params[:user_id])
+      @dishes = User.find(params[:user_id]).dishes
+    else
+      @dishes = Dish.all
+    end
   end
 
   def set_dish

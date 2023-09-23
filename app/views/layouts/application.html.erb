@@ -26,7 +26,7 @@
             <li><%= link_to I18n.t('navigation.links.new_dish'), new_dish_path %></li>
             <li><%= link_to I18n.t('navigation.links.all_dishes'), dishes_path %></li>
             <li><%= link_to I18n.t('navigation.links.all_cooked_dishes'), cooked_dishes_path %></li>
-            <li><%= link_to I18n.t('navigation.links.logout'), destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to I18n.t('navigation.links.logout'), destroy_user_session_path, data: { turbo_method: :delete } %></li>
           <% else %>
             <li><%= link_to I18n.t('navigation.links.register'), new_user_registration_path %></li>
             <li><%= link_to I18n.t('navigation.links.login'), new_user_session_path %></li>

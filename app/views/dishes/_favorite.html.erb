@@ -1,0 +1,9 @@
+<% if favorite_dish.present? %>
+  <%= link_to dish_favorite_dish_path(dish_id: dish.id, id: favorite_dish.id), title: "hurz", data: {turbo_method: :delete } do %>
+    <i class="fa-solid fa-star"></i>
+  <% end %>
+<% else %>
+  <%= link_to dish_favorite_dishes_path(dish_id: dish.id), title: "auch hurz", data: {turbo_method: :post } do %>
+    <i class="fa-regular fa-star"></i>
+  <% end %>
+<% end %>

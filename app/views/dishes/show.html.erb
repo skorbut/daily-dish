@@ -13,7 +13,6 @@
     <%= link_to I18n.t('dishes.show.delete'), dish_path(@dish), data: {turbo_method: :delete, turbo_confirm: I18n.t('dishes.show.confirm_delete')}, role: "button", class: "outline" %>
   </div>
   <% end %>
-  <div></div>
   <div><%= render "cooked_today", dish: @dish %></div>
 
 </div>

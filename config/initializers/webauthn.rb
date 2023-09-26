@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 WebAuthn.configure do |config|
   # This value needs to match `window.location.origin` evaluated by
   # the User Agent during registration and authentication ceremonies.
-  config.origin = ENV.fetch("APP_URL", "http://localhost:3000")
+  config.origin = ENV.fetch('APP_URL', 'http://localhost:3000')
 
   # Relying Party name for display purposes
-  config.rp_name = "daily-dish-app"
+  config.rp_name = 'daily-dish-app'
 
   # Optionally configure a client timeout hint, in milliseconds.
   # This hint specifies how long the browser should wait for any

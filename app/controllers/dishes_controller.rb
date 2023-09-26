@@ -1,25 +1,31 @@
+# frozen_string_literal: true
+
 class DishesController < ApplicationController
-
-
   before_action :authenticate_user!
   before_action :set_dish, only: %i[show edit update destroy]
+
+  def index
+    @dishes = if params[:user_id]
+                User.find(params[:user_id]).dishes
+              else
+                Dish.all
+              end
+  end
+
+  def show; end
 
   def new
     @dish = Dish.new
   end
 
-  def edit
-  end
-
-  def show
-  end
+  def edit; end
 
   def create
     @dish = Dish.new(dish_params)
     @dish.user = current_user
 
     if @dish.save
-      redirect_to action: "index"
+      redirect_to action: 'index'
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,15 +41,7 @@ class DishesController < ApplicationController
 
   def destroy
     @Dish.destroy
-    redirect_to action: "index"
-  end
-
-  def index
-    if (params[:user_id])
-      @dishes = User.find(params[:user_id]).dishes
-    else
-      @dishes = Dish.all
-    end
+    redirect_to action: 'index'
   end
 
   def set_dish

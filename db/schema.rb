@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_23_135851) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_23_154929) do
   create_table "cooked_dishes", force: :cascade do |t|
     t.integer "dish_id", null: false
     t.date "cooked_at"
@@ -28,6 +28,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_135851) do
     t.text "hint"
     t.integer "user_id"
     t.index ["user_id"], name: "index_dishes_on_user_id"
+  end
+
+  create_table "favorite_dishes", force: :cascade do |t|
+    t.integer "dish_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dish_id"], name: "index_favorite_dishes_on_dish_id"
+    t.index ["user_id"], name: "index_favorite_dishes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,5 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_135851) do
   add_foreign_key "cooked_dishes", "dishes"
   add_foreign_key "cooked_dishes", "users"
   add_foreign_key "dishes", "users"
+  add_foreign_key "favorite_dishes", "dishes"
+  add_foreign_key "favorite_dishes", "users"
   add_foreign_key "webauthn_credentials", "users"
 end

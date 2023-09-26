@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :webauthn_credentials, dependent: :destroy
   has_many :dishes
   has_many :cooked_dishes
+  has_many :favorite_dishes
 
   validates :name, uniqueness: true
 

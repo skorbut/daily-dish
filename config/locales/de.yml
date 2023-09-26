@@ -29,6 +29,9 @@ de:
         headline: Benutzer anmelden
         remember_me: Merken
         submit: Anmelden
+  favorite_dishes:
+    index:
+      headline: Meine Lieblingsgerichte
   dishes:
     edit:
       headline: Gericht bearbeiten
@@ -50,6 +53,7 @@ de:
       new_dish: Neues Gericht
       all_dishes: Alle Gerichte
       all_cooked_dishes: Kochkalender
+      favorite_dishes: Lieblingsgerichte
       login: Anmelden
       logout: Abmelden
       my_dishes: Meine Gerichte

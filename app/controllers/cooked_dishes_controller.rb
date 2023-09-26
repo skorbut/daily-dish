@@ -13,7 +13,7 @@ class CookedDishesController < ApplicationController
 
   def create
     @cooked_dish = CookedDish.new(cooked_dish_params)
-    @dish.user = current_user
+    @cooked_dish.user = current_user
     @cooked_dish.cooked_at = Time.zone.today if @cooked_dish.cooked_at.nil?
 
     if @cooked_dish.save

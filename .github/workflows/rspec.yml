@@ -1,5 +1,5 @@
 # .github/workflows/rubocop.yml
-name: Rubocop
+name: Rspec
 
 on:
   push:

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FavoriteDishesController < ApplicationController
   def index
     @favorite_dishes = current_user.favorite_dishes

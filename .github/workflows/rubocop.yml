@@ -1,0 +1,25 @@
+# .github/workflows/rubocop.yml
+name: Rubocop
+
+on:
+  pull_request:
+  # push:
+  #   branches:
+  #     - 'main'
+
+jobs:
+  build:
+    name: CI Rubocop
+    runs-on: ubuntu-latest
+    env:
+      api-dir: ./
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Run rubocop
+        run: |
+          bundle exec rubocop

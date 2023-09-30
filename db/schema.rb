@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_23_154929) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_26_201139) do
   create_table "cooked_dishes", force: :cascade do |t|
     t.integer "dish_id", null: false
     t.date "cooked_at"
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_154929) do
     t.string "webauthn_id"
     t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "users_name_index", unique: true
     t.index ["webauthn_id"], name: "index_users_on_webauthn_id", unique: true
   end
 

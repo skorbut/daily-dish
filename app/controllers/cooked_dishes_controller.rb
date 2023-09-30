@@ -1,14 +1,18 @@
+# frozen_string_literal: true
+
 class CookedDishesController < ApplicationController
-
-
   before_action :authenticate_user!
   before_action :set_cooked_dish, only: %i[show destroy]
 
-  def new
-    @cooked_dish = CookedDish.new
+  def index
+    @cooked_dishes = current_user.cooked_dishes.where(cooked_at: Time.zone.today.all_month)
+    @month = I18n.l Time.zone.today, format: '%B'
   end
 
-  def show
+  def show; end
+
+  def new
+    @cooked_dish = CookedDish.new
   end
 
   def create
@@ -17,7 +21,7 @@ class CookedDishesController < ApplicationController
     @cooked_dish.cooked_at = Time.zone.today if @cooked_dish.cooked_at.nil?
 
     if @cooked_dish.save
-      redirect_to action: "index"
+      redirect_to action: 'index'
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,12 +29,7 @@ class CookedDishesController < ApplicationController
 
   def destroy
     @cooked_dish.destroy
-    redirect_to action: "index"
-  end
-
-  def index
-    @cooked_dishes = current_user.cooked_dishes.where(cooked_at: (Date.today.beginning_of_month..Date.today.end_of_month))
-    @month = I18n.l Time.zone.today, :format => "%B"
+    redirect_to action: 'index'
   end
 
   def set_cooked_dish
@@ -41,4 +40,3 @@ class CookedDishesController < ApplicationController
     params.require(:cooked_dish).permit(:dish_id, :cooked_at)
   end
 end
-

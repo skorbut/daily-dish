@@ -1,0 +1,15 @@
+<% if random_dish.present? %>
+  <section>
+    <h1><%= I18n.t('home.index.random-headline') %></h1>
+    <p><mark><%= random_dish.name %></mark></p>
+  </section>
+<% end %>
+<section>
+  <h1><%= I18n.t('home.index.headline') %></h1>
+  <p>
+    <%= I18n.t('home.index.description') %>
+  </p>
+  <p>
+    <%= I18n.t('home.index.usage') %>
+  </p>
+</section>

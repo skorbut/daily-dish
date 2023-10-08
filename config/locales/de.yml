@@ -29,6 +29,13 @@ de:
         headline: Benutzer anmelden
         remember_me: Merken
         submit: Anmelden
+    passwords:
+      edit:
+        headline: Passwort vergeben
+        new_password: Neues Passwort
+        new_password_confirmation: Neues Passwort bestätigen
+        hint_minimum_length: Mindestens %{minimum_length} Zeichen
+        submit: Passwort speichern
   favorite_dishes:
     index:
       headline: Meine Lieblingsgerichte

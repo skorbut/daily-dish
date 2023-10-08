@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  def random_dish
+    random_id = Dish.pluck(:id).sample
+    Dish.find(random_id) if random_id
+  end
+
   def markdown(text)
     return if text.nil?
 

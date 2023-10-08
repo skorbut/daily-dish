@@ -2,6 +2,7 @@ require:
   - rubocop-capybara
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-factory_bot
 
 AllCops:
   NewCops: enable
@@ -12,7 +13,14 @@ Style/Documentation:
 Layout/LineLength:
   Exclude:
     - 'config/initializers/devise.rb'
+    - 'spec/**/*.rb'
 
 Rails/LexicallyScopedActionFilter:
   Exclude:
     - 'app/controllers/users/registrations_controller.rb'
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Max: 10

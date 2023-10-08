@@ -42,6 +42,9 @@ de:
   dishes:
     edit:
       headline: Gericht bearbeiten
+    form:
+      hint:
+        markdown: "Dieses Feld unterstützt erweiterte Formatierung im markdown Format.\n#, ##, ### für Überschriften\n* oder + für Aufzählungselemente"
     index:
       headline: Gerichte
       new: Neues Gericht

@@ -13,6 +13,7 @@ de:
         email: Email
         password: Passwort
         password_confirmation: Passwort Bestätigung
+        reset_password_token: Passwort Zurücksetzen Token
   cooked_dishes:
     index:
       headline: Kochkalender %{month}

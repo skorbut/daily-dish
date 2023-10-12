@@ -21,7 +21,7 @@ jobs:
         run: |
           bundle exec rspec spec/
       - name: Add code coverage comment
-        uses: romeovs/lcov-reporter-action@v0.2.16
+        uses: romeovs/lcov-reporter-action@v0.2.21
         with:
           lcov-file: ./coverage/lcov/daily-dish.lcov
           github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -50,6 +50,8 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'selenium-webdriver'
+  gem 'simplecov'
+  gem 'simplecov-lcov'
 end
 
 gem 'dockerfile-rails', '>= 1.5', group: :development

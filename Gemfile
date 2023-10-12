@@ -51,7 +51,7 @@ group :test do
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'simplecov'
-  gem 'simplecov-lcov'
+  gem "simplecov-json"
 end
 
 gem 'dockerfile-rails', '>= 1.5', group: :development

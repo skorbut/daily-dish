@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class FavoriteDishesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @favorite_dishes = current_user.favorite_dishes
   end

@@ -40,6 +40,7 @@ de:
   favorite_dishes:
     index:
       headline: Meine Lieblingsgerichte
+      no-dishes: Du hast noch keine Lieblingsgerichte.
   dishes:
     edit:
       headline: Gericht bearbeiten

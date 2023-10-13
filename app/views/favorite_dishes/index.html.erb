@@ -1,10 +1,14 @@
-<section>
-  <h1><%= I18n.t('favorite_dishes.index.headline') %></h1>
-  <ul>
-    <% @favorite_dishes.each do |favorite_dish| %>
-      <li>
-        <%= link_to favorite_dish.dish.name, dish_path(favorite_dish.dish) %> <%= I18n.t('dishes.show.attribution', name: favorite_dish.dish.user.name) %>
-      </li>
-    <% end %>
-  </ul>
-</section>
+<% if @favorite_dishes.present? %>
+  <section>
+    <h1><%= I18n.t('favorite_dishes.index.headline') %></h1>
+    <ul>
+      <% @favorite_dishes.each do |favorite_dish| %>
+        <li>
+          <%= link_to favorite_dish.dish.name, dish_path(favorite_dish.dish) %> <%= I18n.t('dishes.show.attribution', name: favorite_dish.dish.user.name) %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% else %>
+  <p><%= I18n.t('favorite_dishes.index.no-dishes') %></p>
+<% end %>

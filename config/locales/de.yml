@@ -50,6 +50,7 @@ de:
       headline: Gerichte
       new: Neues Gericht
       random-headline: Empfehlung des Hauses
+      no-dishes: Es hat noch niemand ein Gericht angelegt, schnell leg' eins an.
     new:
       headline: Neues Gericht
     show:

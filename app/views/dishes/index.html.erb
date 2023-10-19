@@ -4,13 +4,17 @@
     <p><mark><%= random_dish.name %></mark></p>
   </section>
 <% end %>
-<section>
-  <h1><%= I18n.t('dishes.index.headline') %></h1>
-  <ul>
-    <% @dishes.each do |dish| %>
-      <li>
-        <%= link_to dish.name, dish_path(dish) %>
-      </li>
-    <% end %>
-  </ul>
-</section>
+<% if @dishes.present? %>
+  <section>
+    <h1><%= I18n.t('dishes.index.headline') %></h1>
+    <ul>
+      <% @dishes.each do |dish| %>
+        <li>
+          <%= link_to dish.name, dish_path(dish) %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% else %>
+  <p><%= I18n.t('dishes.index.no-dishes') %></p>
+<% end %>

@@ -13,6 +13,7 @@ de:
         email: Email
         password: Passwort
         password_confirmation: Passwort Bestätigung
+        reset_password_token: Passwort Zurücksetzen Token
   cooked_dishes:
     index:
       headline: Kochkalender %{month}
@@ -39,6 +40,7 @@ de:
   favorite_dishes:
     index:
       headline: Meine Lieblingsgerichte
+      no-dishes: Du hast noch keine Lieblingsgerichte.
   dishes:
     edit:
       headline: Gericht bearbeiten
@@ -49,6 +51,7 @@ de:
       headline: Gerichte
       new: Neues Gericht
       random-headline: Empfehlung des Hauses
+      no-dishes: Es hat noch niemand ein Gericht angelegt, schnell leg' eins an.
     new:
       headline: Neues Gericht
     show:

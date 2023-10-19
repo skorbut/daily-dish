@@ -31,7 +31,7 @@ de:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      no_token: "Die eingebene Adresse zum Zurücksetzen des Passwortes war unvollständig. Bitte kopiere den gesamten Link."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Das Passwort wurde zurückgesetzt. Anmeldung erfolgreich."
@@ -57,7 +57,7 @@ de:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
       confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
+      expired: "ist abgelaufen. Bitte fordere einen neuen Link an, um das Passwort zurückzusetzen."
       not_found: "not found"
       not_locked: "was not locked"
       not_saved:

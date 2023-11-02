@@ -26,7 +26,7 @@ describe 'user views favorite dish list' do
       it 'shows the dishes name' do
         user = create(:user)
         dish = create(:dish)
-        create(:favorite_dish, user: user, dish: dish)
+        create(:favorite_dish, user:, dish:)
         login_as(user, scope: :user)
 
         visit favorite_dishes_path

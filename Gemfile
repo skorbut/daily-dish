@@ -5,8 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.0'
 
-gem 'pundit'
 gem 'devise'
+gem 'pundit'
 gem 'webauthn'
 
 gem 'bootsnap', require: false

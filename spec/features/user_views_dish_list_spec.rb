@@ -25,7 +25,7 @@ describe 'user views dish list' do
     it 'is the random dish' do
       user = create(:user)
       login_as(create(:user), scope: :user)
-      create(:dish, user: user)
+      create(:dish, user:)
 
       visit dishes_path
 
@@ -35,7 +35,7 @@ describe 'user views dish list' do
     it 'displays the dishes list' do
       user = create(:user)
       login_as(create(:user), scope: :user)
-      create(:dish, user: user)
+      create(:dish, user:)
 
       visit dishes_path
 
@@ -45,7 +45,7 @@ describe 'user views dish list' do
     it 'displays the same dish in both lists' do
       user = create(:user)
       login_as(create(:user), scope: :user)
-      random_dish = create(:dish, user: user)
+      random_dish = create(:dish, user:)
 
       visit dishes_path
 
@@ -55,7 +55,7 @@ describe 'user views dish list' do
     it 'the dish from the list is a link' do
       user = create(:user)
       login_as(create(:user), scope: :user)
-      random_dish = create(:dish, user: user)
+      random_dish = create(:dish, user:)
 
       visit dishes_path
 

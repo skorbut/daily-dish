@@ -9,7 +9,7 @@ class FavoriteDishesController < ApplicationController
 
   def create
     dish = Dish.find(params[:dish_id])
-    FavoriteDish.create(dish: dish, user: current_user)
+    FavoriteDish.create(dish:, user: current_user)
     redirect_to dish_url(dish)
   end
 

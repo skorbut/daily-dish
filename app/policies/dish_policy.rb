@@ -1,4 +1,6 @@
-class DishPolicy  < ApplicationPolicy
+# frozen_string_literal: true
+
+class DishPolicy < ApplicationPolicy
   def update?
     record.user == user
   end

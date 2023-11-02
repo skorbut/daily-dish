@@ -7,7 +7,7 @@ describe 'user views dish' do
     it 'displays the title' do
       user = create(:user)
       login_as(user, scope: :user)
-      dish = create(:dish, user: user)
+      dish = create(:dish, user:)
 
       visit dish_path(dish)
 
@@ -17,7 +17,7 @@ describe 'user views dish' do
     it 'displays formatted markdown' do
       user = create(:user)
       login_as(user, scope: :user)
-      dish = create(:dish, user: user, hint: '# Einkaufsliste:')
+      dish = create(:dish, user:, hint: '# Einkaufsliste:')
 
       visit dish_path(dish)
 
@@ -27,7 +27,7 @@ describe 'user views dish' do
     it 'has an outline star' do
       user = create(:user)
       login_as(user, scope: :user)
-      dish = create(:dish, user: user)
+      dish = create(:dish, user:)
 
       visit dish_path(dish)
 
@@ -37,7 +37,7 @@ describe 'user views dish' do
     it 'has cooked today button' do
       user = create(:user)
       login_as(user, scope: :user)
-      dish = create(:dish, user: user)
+      dish = create(:dish, user:)
 
       visit dish_path(dish)
 
@@ -47,7 +47,7 @@ describe 'user views dish' do
     it 'has link to delete dish' do
       user = create(:user)
       login_as(user, scope: :user)
-      dish = create(:dish, user: user)
+      dish = create(:dish, user:)
 
       visit dish_path(dish)
 
@@ -57,7 +57,7 @@ describe 'user views dish' do
     it 'has link to edit dish' do
       user = create(:user)
       login_as(user, scope: :user)
-      dish = create(:dish, user: user)
+      dish = create(:dish, user:)
 
       visit dish_path(dish)
 
@@ -132,7 +132,7 @@ describe 'user views dish' do
       user = create(:user)
       login_as(user, scope: :user)
       dish = create(:dish)
-      create(:favorite_dish, user: user, dish: dish)
+      create(:favorite_dish, user:, dish:)
 
       visit dish_path(dish)
 

@@ -83,3 +83,7 @@ de:
       description: Dies ist ein kleines Projekt zur gemeinschaftlichen Sammlung von Rezeptideen, um am Wochenende nicht immer das Gleiche zu kochen.
       usage: Angemeldete Nutzer haben die Möglichkeit selbst Gerichte zum Bestand hinzuzufügen und daraus Favoritenlisten zu bilden. Weiterhin gibt es die Möglichkeit zu speichern, wann es ein bestimmtes Gericht gab.
   cooked_today: "Das gab's heute"
+  authorization:
+    fail:
+      dish:
+        edit: "Du kannst nicht das Gericht von %{user_name} bearbeiten"

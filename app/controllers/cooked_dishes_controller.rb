@@ -2,17 +2,11 @@
 
 class CookedDishesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_cooked_dish, only: %i[show destroy]
+  before_action :set_cooked_dish, only: :destroy
 
   def index
     @cooked_dishes = current_user.cooked_dishes.where(cooked_at: Time.zone.today.all_month)
     @month = I18n.l Time.zone.today, format: '%B'
-  end
-
-  def show; end
-
-  def new
-    @cooked_dish = CookedDish.new
   end
 
   def create

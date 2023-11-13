@@ -45,7 +45,10 @@ class DishesController < ApplicationController
   end
 
   def destroy
-    @Dish.destroy
+    authorize @dish
+    Rails.logger.debug 'Destroying dish'
+    @dish.destroy
+    Rails.logger.debug 'Dish destroyed'
     redirect_to action: 'index'
   end
 

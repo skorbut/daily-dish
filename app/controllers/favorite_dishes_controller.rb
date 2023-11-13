@@ -17,8 +17,4 @@ class FavoriteDishesController < ApplicationController
     destroyed_favorite_dish = FavoriteDish.find(params[:id]).destroy
     redirect_to dish_url(destroyed_favorite_dish.dish)
   end
-
-  def favorite_dish_params
-    params.require(:favorite_dish).permit(:dish_id)
-  end
 end

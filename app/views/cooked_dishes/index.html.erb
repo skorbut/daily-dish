@@ -9,7 +9,7 @@
       <li>
         <%= cooked_dish.cooked_at %>: <%= link_to cooked_dish.dish.name, dish_path(cooked_dish.dish) %>
 
-        <%= link_to cooked_dish_path(cooked_dish), data: {turbo_method: :delete, turbo_confirm: I18n.t('cooked_dishes.index.confirm_delete')} do %>
+        <%= link_to cooked_dish_path(cooked_dish), title: "hurz", data: {turbo_method: :delete } do %>
           <i class="fa-solid fa-trash"></i>
         <% end %>
       </li>

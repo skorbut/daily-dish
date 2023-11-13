@@ -8,4 +8,8 @@ class DishPolicy < ApplicationPolicy
   def edit?
     record.user == user
   end
+
+  def destroy?
+    record.user == user
+  end
 end

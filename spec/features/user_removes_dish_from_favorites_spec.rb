@@ -6,8 +6,8 @@ describe 'user removes dish from favorites', :js do
   context 'with own dish' do
     it 'removes the favorite dish' do
       user = create(:user)
-      dish = create(:dish, user: user)
-      create(:favorite_dish, dish: dish, user: user)
+      dish = create(:dish, user:)
+      create(:favorite_dish, dish:, user:)
 
       login_as(user, scope: :user)
       visit dish_path(dish)
@@ -20,7 +20,7 @@ describe 'user removes dish from favorites', :js do
     it 'removes the favorite dish' do
       user = create(:user)
       dish = create(:dish)
-      create(:favorite_dish, dish: dish, user: user)
+      create(:favorite_dish, dish:, user:)
 
       login_as(user, scope: :user)
       visit dish_path(dish)

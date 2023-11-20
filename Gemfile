@@ -3,9 +3,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.2.0'
 
 gem 'devise'
+gem 'pundit'
 gem 'webauthn'
 
 gem 'bootsnap', require: false
@@ -13,8 +14,8 @@ gem 'font-awesome-sass'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pico-rails'
-gem 'puma', '~> 5.0'
-gem 'rails', '~> 7.0.8'
+gem 'puma', '~> 6.0'
+gem 'rails', '~> 7.1.1'
 gem 'rails-i18n'
 gem 'redcarpet'
 gem 'redis', '~> 4.0'

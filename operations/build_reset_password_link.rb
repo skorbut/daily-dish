@@ -5,7 +5,7 @@
 # `fly ssh console --pty -C "/rails/bin/rails console"`
 
 def build_reset_password_link(email)
-  user = User.find_by(email: email)
+  user = User.find_by(email:)
   token = user.send(:set_reset_password_token)
   app.edit_user_password_url(user, reset_password_token: token)
 end

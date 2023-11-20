@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :dishes do
     resources :favorite_dishes, only: %i[create destroy]
   end
-  resources :cooked_dishes
+  resources :cooked_dishes, only: %i[index create destroy]
   resources :favorite_dishes, only: :index
 end

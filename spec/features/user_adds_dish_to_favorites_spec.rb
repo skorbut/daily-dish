@@ -7,7 +7,7 @@ describe 'user adds dish to favorites', :js do
     it 'creates a new favorite dish model' do
       user = create(:user)
       login_as(user, scope: :user)
-      dish = create(:dish, user: user)
+      dish = create(:dish, user:)
 
       visit dish_path(dish)
 

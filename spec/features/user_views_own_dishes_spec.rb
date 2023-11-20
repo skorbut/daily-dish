@@ -2,20 +2,22 @@
 
 require 'rails_helper'
 
-describe 'user views dish list' do
+describe 'user views own dishes' do
   context 'without dishes' do
     it 'has no random dish' do
-      login_as(create(:user), scope: :user)
+      user = create(:user)
+      login_as(user, scope: :user)
 
-      visit dishes_path
+      visit dishes_path(user_id: user.id)
 
       expect(page).not_to have_content('Empfehlung des Hauses')
     end
 
     it 'displays an empty list message' do
-      login_as(create(:user), scope: :user)
+      user = create(:user)
+      login_as(user, scope: :user)
 
-      visit dishes_path
+      visit dishes_path(user_id: user.id)
 
       expect(page).to have_content("Es hat noch niemand ein Gericht angelegt, schnell leg' eins an.")
     end
@@ -27,7 +29,7 @@ describe 'user views dish list' do
       login_as(create(:user), scope: :user)
       create(:dish, user:)
 
-      visit dishes_path
+      visit dishes_path(user_id: user.id)
 
       expect(page).to have_content('Empfehlung des Hauses')
     end
@@ -37,7 +39,7 @@ describe 'user views dish list' do
       login_as(create(:user), scope: :user)
       create(:dish, user:)
 
-      visit dishes_path
+      visit dishes_path(user_id: user.id)
 
       expect(page).to have_content('Gerichte')
     end
@@ -47,7 +49,7 @@ describe 'user views dish list' do
       login_as(create(:user), scope: :user)
       random_dish = create(:dish, user:)
 
-      visit dishes_path
+      visit dishes_path(user_id: user.id)
 
       expect(page).to have_content(random_dish.name, count: 2)
     end
@@ -57,7 +59,7 @@ describe 'user views dish list' do
       login_as(create(:user), scope: :user)
       random_dish = create(:dish, user:)
 
-      visit dishes_path
+      visit dishes_path(user_id: user.id)
 
       expect(page).to have_link(random_dish.name, href: dish_path(random_dish))
     end

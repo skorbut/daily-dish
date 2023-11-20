@@ -4,6 +4,8 @@ class DishesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_dish, only: %i[show edit update destroy]
 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   def index
     @dishes = if params[:user_id]
                 User.find(params[:user_id]).dishes
@@ -18,7 +20,9 @@ class DishesController < ApplicationController
     @dish = Dish.new
   end
 
-  def edit; end
+  def edit
+    authorize @dish
+  end
 
   def create
     @dish = Dish.new(dish_params)
@@ -32,6 +36,7 @@ class DishesController < ApplicationController
   end
 
   def update
+    authorize @dish
     if @dish.update(dish_params)
       redirect_to dish_url(@dish)
     else
@@ -40,7 +45,10 @@ class DishesController < ApplicationController
   end
 
   def destroy
-    @Dish.destroy
+    authorize @dish
+    Rails.logger.debug 'Destroying dish'
+    @dish.destroy
+    Rails.logger.debug 'Dish destroyed'
     redirect_to action: 'index'
   end
 
@@ -50,5 +58,10 @@ class DishesController < ApplicationController
 
   def dish_params
     params.require(:dish).permit(:name, :hint)
+  end
+
+  def user_not_authorized
+    flash[:alert] = I18n.t('authorization.fail.dish.edit', user_name: @dish.user.name)
+    redirect_back(fallback_location: dish_path(@dish))
   end
 end

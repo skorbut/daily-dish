@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 # run on console to set reset password token hash of user and generate reset link to be send to the user.
-# execute console on fly.io system (https://fly.io/docs/rails/the-basics/run-tasks-and-consoles/):
-# `fly ssh console --pty -C "/rails/bin/rails console"`
+# TODO: document system access if deployt somewhere
 
 def build_reset_password_link(email)
   user = User.find_by(email:)
